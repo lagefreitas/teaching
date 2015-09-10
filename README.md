@@ -1,3 +1,5 @@
-# TODO
+#Teaching
 
-* rename project to talks-lectures
+##Naming
+
+[year].[semester]-[class]-[subject]
