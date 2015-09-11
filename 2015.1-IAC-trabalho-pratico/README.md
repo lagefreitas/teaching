@@ -5,13 +5,13 @@ Instituto de Computação</br>
 
 #Trabalho Prático AB2
 
-Disciplina: Introdução à Computação</br>
+Disciplina: Sistemas Operacionais</br>
 Semestre letivo: 2015.1</br>
 Professor: André Lage Freitas</br>
 
 ## Objetivo
 
-Compreender o consumo dos recursos do computador pelos processos. Investigar a utilização da UCP e da memória pelos processos através de experimentos.
+Compreender o consumo dos recursos do computador pelos processos. Investigar a utilização da UCP e da memória pelos processos através de experimentos. Experimentar a gestão de processos.
 
 ## Especificação
 
@@ -77,13 +77,15 @@ Em suma, entendam que quem corrigirá o seu trabalho utilizará outro ambiente c
 
 ## Critérios de Correção
 
+
 * A nota máxima atribuída será de 20,0 pontos distribuídos da seguinte maneira:
-	* Organização (4,0 pontos): código bem escrito, padronizado e comentado.
-	* Conteúdo (16,0 pontos): se o programa funciona de acordo com a sua especificação:
-		* 8,0 pontos: lê a partir da entrada;
-		* 8,0 pontos: realiza corretamente a soma.
+	* Organização (**4,0 pontos**): código bem escrito, padronizado e comentado.
+	* Conteúdo (**16,0 pontos**): 
+		* **10,0 pontos**: se o programa compila, executa e funciona como especificado;
+ 		* **6,0 pontos**: relatório, sendo 3 pontos para cada seção da Seção Discussão.
+
 * Cada equipe deverá distribuir os pontos entre os membros da equipe sendo a nota individual de cada membro não poderá ser maior que 10,0 pontos.
-* Após a divulgação da nota do trbalho pelo Monitor da disciplina, a equipe terá 48h para enviar as notas individuais para o Monitor por e-mail.
+* Após a divulgação da nota do trabalho pelo Monitor da disciplina, a equipe terá **48h** para enviar as notas individuais para o Monitor por e-mail.
 
 ### Pontuação extra
 

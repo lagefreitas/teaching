@@ -23,3 +23,4 @@
 
 
 ## Utilização intensa da UCP e memória
+	
