@@ -112,9 +112,10 @@ A responsabilidade sobre a integridade do arquivo contendo trabalho é exclusiva
 
 ### Prazos
 
-O prazo de entrega sem atraso é de **15 dias**, contados a partir do re-início das aulas, ou seja, após finalizada a greve dos docentes.
+O prazo de entrega sem atraso é o dia **20/10/15**.
 
-Trabalhos entregues com atraso serão aceitos até o segundo dias após o prazo de entrega sem atraso. Isto é, até **48h** após os 15 dias. Serão descontados 5% da nota obtida por dia de atraso. Nenhum trabalho será aceito após as 48h de atraso.
+Trabalhos entregues com atraso serão aceitos, no máximo, até o o dia **22/10/15**. Serão descontados 5% da nota obtida por dia de atraso.
+
 
 ## Referências
 
