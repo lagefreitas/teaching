@@ -31,7 +31,10 @@ else /* senão, sou o processo filho*/
     	malloc(sizeof(100000));
 		}
 	}
-	//TODO: apresentar uma mensagem de erro
+	//22 é o erro de argumento inválido
+	//http://www.virtsync.com/c-error-codes-include-errno
+	fprintf(stderr, "Erro: %s\n", strerror(22));
+	exit(22);
 }
 
 perror ("Erro: ") ; /* execve não funcionou */
