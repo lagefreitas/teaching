@@ -9,6 +9,8 @@ int main (int argc, char *argv[], char *envp[]) {
 
 int pid ; /* identificador de processo */
 
+int i;
+
 pid = fork () ; /* replicação do processo */
 
 if ( pid < 0 ) { /* se fork não funcionou */
@@ -18,7 +20,11 @@ if ( pid < 0 ) { /* se fork não funcionou */
 else if( pid > 0 ) /* se sou o processo pai*/
 {
 	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
-	//TODO após 10 segundos de execução, mate o proceso filho
+	for(i = 0; i < 10; i++){
+		sleep(1);
+	}
+	//após 10 segundos de execução, mate o proceso filho
+	kill(pid, SIGKILL);
 }
 else /* senão, sou o processo filho*/
 {
