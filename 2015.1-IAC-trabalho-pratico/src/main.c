@@ -7,11 +7,25 @@
 
 int main (int argc, char *argv[], char *envp[]) {
 
-int pid ; /* identificador de processo */
+int pid, i, j; /* identificador de processo */
+float pcpu;
 
-int i;
+FILE *fp;
+char dump[50], file_path[50] = "/proc/", str_pid[50], ps_command[100] = "ps -p ";
+char path[50];
+char *memtotal = NULL;
+char * line = NULL;
+size_t len = 0;
+ssize_t read;
 
 pid = fork () ; /* replicação do processo */
+
+
+sprintf(str_pid, "%d", pid);
+strcat(file_path, str_pid);
+strcat(file_path, "/status");
+strcat(ps_command, str_pid);
+strcat(ps_command, " -o %cpu | sed 1d");
 
 if ( pid < 0 ) { /* se fork não funcionou */
 	perror ("Erro: ") ;
@@ -19,9 +33,39 @@ if ( pid < 0 ) { /* se fork não funcionou */
 }
 else if( pid > 0 ) /* se sou o processo pai*/
 {
+	fp = fopen("/proc/meminfo","r");
+	while ((read = getline(&line, &len, fp)) != -1) {
+		if (!strncmp(line, "MemTotal:", 9))
+		{
+			memtotal = strdup(&line[17]);
+			printf("%s", strtok(memtotal, " "));
+		}
+	}
 	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
-	for(i = 0; i < 10; i++){
+	for(j = 0; j < 10; j++){
+		fp = popen(ps_command,"r");
+		//fp = fopen(file_path,"r");
+		/*while ((read = getline(&line, &len, fp)) != -1) {
+			if (!strncmp(line, "VmRSS:", 6))
+			{
+				vmhwm = strdup(&line[6]);
+			}
+		}*/
+		while (fgets(path, sizeof(path)-1, fp) != NULL) {
+			for(i = 0; i < strlen(path);i++){
+				if(path[i] != ' '){
+					path[i-1] = path[i];
+				}
+			}
+			pcpu = atof(path);
+			printf("CPU: %.2f%%\n", pcpu);
+		}
+		fclose(fp);
+		
 		sleep(1);
+	}
+	if (line){
+		free(line);
 	}
 	//após 10 segundos de execução, mate o proceso filho
 	kill(pid, SIGKILL);
@@ -34,7 +78,8 @@ else /* senão, sou o processo filho*/
 	} else if ( strcmp(argv[1], "cpu-mem") == 0 ){
 		//Código com uso intenso de memória e cpu
 		for (;;) {
-    	malloc(sizeof(100000));
+			sleep(1);
+    		malloc(sizeof(100000));
 		}
 	}
 	//22 é o erro de argumento inválido
