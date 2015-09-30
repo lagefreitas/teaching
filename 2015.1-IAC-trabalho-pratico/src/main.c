@@ -8,7 +8,7 @@
 int main (int argc, char *argv[], char *envp[]) {
 
 int pid, i, j, k; /* identificador de processo */
-float pcpu, pmem;
+float pcpu, pmem, memoria;
 
 FILE *fp;
 char dump[50], file_path[50] = "/proc/", str_pid[50], cpu_command[100] = "ps -p ", mem_command[100] = "ps -p ";
@@ -41,7 +41,8 @@ else if( pid > 0 ) /* se sou o processo pai*/
 		if (!strncmp(line, "MemTotal:", 9))
 		{
 			memtotal = strdup(&line[17]);
-			printf("%s", strtok(memtotal, " "));
+			memoria = atof(strtok(memtotal, " "));
+			printf("Memória Total: %.2f KB\n", memoria);
 		}
 	}
 	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
@@ -74,9 +75,13 @@ else if( pid > 0 ) /* se sou o processo pai*/
 			}
 		}*/
 		while (fgets(path, sizeof(path)-1, fp) != NULL) {
-			
-			//pmem = atof(path);
-			printf("Memória: %s\n", path);
+			for(i = 0; i < strlen(path);i++){
+				if(path[i] != ' '){
+					path[i-1] = path[i];
+				}
+			}
+			pmem = atof(path);
+			printf("Memória: %.2f KB\n", (memoria*pmem)/100);
 		}
 		fclose(fp);
 		
