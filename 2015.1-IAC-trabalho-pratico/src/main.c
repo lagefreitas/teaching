@@ -7,11 +7,11 @@
 
 int main (int argc, char *argv[], char *envp[]) {
 
-int pid, i, j; /* identificador de processo */
-float pcpu;
+int pid, i, j, k; /* identificador de processo */
+float pcpu, pmem;
 
 FILE *fp;
-char dump[50], file_path[50] = "/proc/", str_pid[50], ps_command[100] = "ps -p ";
+char dump[50], file_path[50] = "/proc/", str_pid[50], cpu_command[100] = "ps -p ", mem_command[100] = "ps -p ";
 char path[50];
 char *memtotal = NULL;
 char * line = NULL;
@@ -24,8 +24,10 @@ pid = fork () ; /* replicação do processo */
 sprintf(str_pid, "%d", pid);
 strcat(file_path, str_pid);
 strcat(file_path, "/status");
-strcat(ps_command, str_pid);
-strcat(ps_command, " -o %cpu | sed 1d");
+strcat(cpu_command, str_pid);
+strcat(cpu_command, " -o %cpu | sed 1d");
+strcat(mem_command, str_pid);
+strcat(mem_command, " -o %mem | sed 1d");
 
 if ( pid < 0 ) { /* se fork não funcionou */
 	perror ("Erro: ") ;
@@ -33,6 +35,7 @@ if ( pid < 0 ) { /* se fork não funcionou */
 }
 else if( pid > 0 ) /* se sou o processo pai*/
 {
+	printf("PID: %d\n", pid);
 	fp = fopen("/proc/meminfo","r");
 	while ((read = getline(&line, &len, fp)) != -1) {
 		if (!strncmp(line, "MemTotal:", 9))
@@ -43,7 +46,7 @@ else if( pid > 0 ) /* se sou o processo pai*/
 	}
 	//TODO guarde a cada segundo o consumo de memória (em Kilobytes) e CPU (em porcentagem) do processo filho
 	for(j = 0; j < 10; j++){
-		fp = popen(ps_command,"r");
+		fp = popen(cpu_command,"r");
 		//fp = fopen(file_path,"r");
 		/*while ((read = getline(&line, &len, fp)) != -1) {
 			if (!strncmp(line, "VmRSS:", 6))
@@ -62,6 +65,21 @@ else if( pid > 0 ) /* se sou o processo pai*/
 		}
 		fclose(fp);
 		
+		fp = popen(mem_command,"r");
+		//fp = fopen(file_path,"r");
+		/*while ((read = getline(&line, &len, fp)) != -1) {
+			if (!strncmp(line, "VmRSS:", 6))
+			{
+				vmhwm = strdup(&line[6]);
+			}
+		}*/
+		while (fgets(path, sizeof(path)-1, fp) != NULL) {
+			
+			//pmem = atof(path);
+			printf("Memória: %s\n", path);
+		}
+		fclose(fp);
+		
 		sleep(1);
 	}
 	if (line){
@@ -77,15 +95,16 @@ else /* senão, sou o processo filho*/
 		for (;;) {}
 	} else if ( strcmp(argv[1], "cpu-mem") == 0 ){
 		//Código com uso intenso de memória e cpu
-		for (;;) {
-			sleep(1);
-    		malloc(sizeof(100000));
+		for (k = 0;k < 50000;k++) {
+    		malloc(10000000);
 		}
+		sleep(15);
+	}else{
+		//22 é o erro de argumento inválido
+		//http://www.virtsync.com/c-error-codes-include-errno
+		fprintf(stderr, "Erro: %s\n", strerror(22));
+		exit(22);	
 	}
-	//22 é o erro de argumento inválido
-	//http://www.virtsync.com/c-error-codes-include-errno
-	fprintf(stderr, "Erro: %s\n", strerror(22));
-	exit(22);
 }
 
 perror ("Erro: ") ; /* execve não funcionou */
