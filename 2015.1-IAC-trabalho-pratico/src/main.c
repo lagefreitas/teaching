@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/wait.h>
+#include <sys/sysinfo.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -20,6 +21,8 @@ ssize_t read;
 
 pid = fork () ; /* replicação do processo */
 
+//Número de núcleos do processador
+int numCores = get_nprocs_conf();
 
 sprintf(str_pid, "%d", pid);
 strcat(file_path, str_pid);
@@ -62,10 +65,10 @@ else if( pid > 0 ) /* se sou o processo pai*/
 				}
 			}
 			pcpu = atof(path);
-			printf("CPU: %.2f%%\n", pcpu);
+			printf("CPU: %.2f%%\n", pcpu/numCores);
 		}
 		fclose(fp);
-		
+
 		fp = popen(mem_command,"r");
 		//fp = fopen(file_path,"r");
 		/*while ((read = getline(&line, &len, fp)) != -1) {
@@ -84,7 +87,7 @@ else if( pid > 0 ) /* se sou o processo pai*/
 			printf("Memória: %.2f KB\n", (memoria*pmem)/100);
 		}
 		fclose(fp);
-		
+
 		sleep(1);
 	}
 	if (line){
@@ -108,7 +111,7 @@ else /* senão, sou o processo filho*/
 		//22 é o erro de argumento inválido
 		//http://www.virtsync.com/c-error-codes-include-errno
 		fprintf(stderr, "Erro: %s\n", strerror(22));
-		exit(22);	
+		exit(22);
 	}
 }
 
