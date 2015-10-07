@@ -20,7 +20,8 @@ Simulador o Escalonador de Tarefas de um Sistema Operacional.
 O trabalho consiste em simular o escalonamento de um conjunto de tarefas usando os seguintes algoritmos de escalonamento de tarefas [1]:
 
 * **FCFS** (First Come, First Served)
-* **Round-Robin** com quantum = **2s**, com prioridade
+* **Round-Robin** com quantum = **2s**
+	* Observação: quem implementar com prioridade, será considerado como pontuação extra (até 1,0 ponto)
 
 
 ### Entrada do Programa
@@ -183,6 +184,7 @@ Em suma, entendam que quem corrigirá o seu trabalho utilizará outro ambiente c
 		* **8,0 pontos**: simula corretamente a política de escalonamento **FCFS** (First Come, First Served);
  		* **8,0 pontos**: simula corretamente a política de escalonamento **Round-Robin** com quantum = **2s**, com prioridade.
 
+* Cada equipe deverá conter **dois** discentes no máximo.
 * Cada equipe deverá distribuir os pontos entre os membros da equipe sendo a nota individual de cada membro não poderá ser maior que 10,0 pontos.
 * Após a divulgação da nota do trabalho pelo Monitor da disciplina, a equipe terá **48h** para enviar as notas individuais para o Monitor por e-mail.
 
