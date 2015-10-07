@@ -13,7 +13,7 @@ void usoCPU() {
 //TODO como ele termina a iteração muito rápido, o processador logo fica ocioso.
 void usoMemoria() {
 	int i;
-	for (i = 0; i < 50000; i++) {
+	for (i = 0; i < 10000; i++) {
 			malloc(10000000);
 	}
 	sleep(15);
@@ -41,7 +41,7 @@ int main (int argc, char *argv[], char *envp[]) {
 		size_t len = 0;
 		ssize_t read;
 
-		float pcpu, pmem, memoria;
+		double pcpu, pmem, memoria;
 
 		int numNucleos = get_nprocs_conf(); //Número de núcleos do processador
 
@@ -62,13 +62,13 @@ int main (int argc, char *argv[], char *envp[]) {
 			{
 				memtotal = strdup(&line[17]);
 				memoria = atof(strtok(memtotal, " "));
-				printf("Memória Total: %.2f KB\n", memoria);
+				printf("Memória Total: %.2lf KB\n", memoria);
 			}
 		}
 
 		printf("Número de núcleos: %d\n\n", numNucleos);
 
-		for(j = 0; j <= 10; j++){
+		for(j = 0; j <= 100; j++){
 
 			printf("Tempo: %ds\t", j);
 
@@ -81,7 +81,7 @@ int main (int argc, char *argv[], char *envp[]) {
 					}
 				}
 				pcpu = atof(path);
-				printf("CPU: %.2f%%", pcpu/numNucleos);
+				printf("CPU: %.2lf%%", pcpu/numNucleos);
 			}
 			fclose(fp);
 
@@ -90,11 +90,11 @@ int main (int argc, char *argv[], char *envp[]) {
 			while (fgets(path, sizeof(path)-1, fp) != NULL) {
 				for(i = 0; i < strlen(path);i++){
 					if(path[i] != ' '){
-						path[i-1] = path[i];
+						path[i] = path[i];
 					}
 				}
 				pmem = atof(path);
-				printf("\tMemória: %.2f KB\n", (memoria*pmem)/100);
+				printf("\tMemória: %.2lf KB\n", (memoria*pmem)/100);
 			}
 			fclose(fp);
 
@@ -109,14 +109,14 @@ int main (int argc, char *argv[], char *envp[]) {
 
 	}
 	else {
-		if ( strcmp(argv[1], "cpu") == 0 ) {
+		if (strcmp(argv[1], "cpu") == 0 ) {
 			usoCPU();
 		} else if ( strcmp(argv[1], "cpu-mem") == 0 ) {
 			usoMemoria();
-		} else {
+		}
 			fprintf(stderr, "Erro: %s\n", strerror(22));
 			exit(22);
-		}
+
 	}
 
 	//Execve??
