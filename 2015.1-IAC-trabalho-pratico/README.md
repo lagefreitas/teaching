@@ -5,7 +5,7 @@ Instituto de Computação</br>
 
 #Trabalho Prático AB2
 
-Disciplina: Sistemas Operacionais</br>
+Disciplina: Introdução à Computação</br>
 Semestre letivo: 2015.1</br>
 Professor: André Lage Freitas</br>
 
