@@ -1,9 +1,9 @@
 # Identificação
 
-* Página do repositório do trabalho ([link GitHub](https://github.com/Leandro97/teaching.git)) 
+* Página do repositório do trabalho ([link GitHub](https://github.com/Leandro97/teaching)) 
 
 * Discente 1
-	* Nome: Leandro Martins de Freitas
+	* Nome: Leandro martins de Freitas
 	* Matrícula: 15111982 
 * Discente 2
 	* Nome: TODO
