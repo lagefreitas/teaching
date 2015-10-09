@@ -3,7 +3,7 @@
 * Página do repositório do trabalho ([link GitHub](https://github.com/Leandro97/teaching)) 
 
 * Discente 1
-	* Nome: Leandro martins de Freitas
+	* Nome: Leandro Martins de Freitas
 	* Matrícula: 15111982 
 * Discente 2
 	* Nome: TODO

@@ -29,7 +29,7 @@ int main (int argc, char *argv[], char *envp[]) {
         for(i = 0; i < 10; i++) {
             printf("CPU(%c)\n", 37);
             system(cpu); //running the cpu usage command
-            printf("Mem\n");
+            printf("Mem(kB)\n");
             system(mem); //running the memory usage command
             printf("----\n");
             sleep(1); //waits one second
