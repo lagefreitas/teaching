@@ -47,6 +47,7 @@ int getMemoryUsage(int pid){
 }
 
 int main (int argc, char *argv[], char *envp[]) {
+
 	system("clear");
 
 	int pid = fork();
@@ -58,11 +59,12 @@ int main (int argc, char *argv[], char *envp[]) {
 	else if ( pid > 0 ) {
 		struct sysinfo info;
 		sysinfo( &info );
-		printf("PID do processo filho: %d\n\n", pid);
-		printf("Memória total: %lu\n", ((size_t)info.totalram * (size_t)info.mem_unit)/1024);
+		printf("PID: %d\n", pid);
+		printf("Memória total: %lu MB\n\n", ((size_t)info.totalram * (size_t)info.mem_unit)/(1024*1024));
+		printf("Tempo\tCPU\tMemória\n");
 
 		for (i = 0; i < 10; i++){
-			printf("Tempo: %ds\tCPU: %.2lf%%\tMemória: %d kB\n", i, getCpuUsage(pid), getMemoryUsage(pid));
+			printf("%ds\t%.2lf%%\t%d kB\n", i, getCpuUsage(pid), getMemoryUsage(pid));
 			sleep(1);
 		}
 		kill(pid, SIGKILL); //Mata o processo filho
@@ -78,10 +80,6 @@ int main (int argc, char *argv[], char *envp[]) {
 		exit(22);
 	}
 
-	//Execve??
-	perror ("\nErro"); /* execve não funcionou */
-
-	printf ("Tchau!\n");
 	exit(0); /* encerra o processo com sucesso (código 0) */
 
 }
