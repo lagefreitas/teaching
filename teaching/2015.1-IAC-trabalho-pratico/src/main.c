@@ -23,7 +23,7 @@ int main (int argc, char *argv[], char *envp[]) {
 	{
         //this 3 sprintf functions format the used commands
         sprintf(cpu, "%s%d%s", "ps -e -o pid,pcpu | grep ", pid, " | awk '{print $2}'");
-        sprintf(mem, "%s%d%s", "cat /proc/", pid,"/status | grep VmRSS | awk '{print $2}'");
+        sprintf(mem, "%s%d%s", "cat /proc/", pid,"/status | grep VmSize | awk '{print $2}'");
         sprintf(cm, "%s%d", "kill -9 ", pid);
         
         for(i = 0; i < 10; i++) {
