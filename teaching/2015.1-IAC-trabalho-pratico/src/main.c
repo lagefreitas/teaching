@@ -8,7 +8,7 @@
 int main (int argc, char *argv[], char *envp[]) {
 
     int pid ; //process identifier
-    int i;
+    int i;	//counter
     char cpu[100]; //command of cpu usage 
     char mem[100]; //command of memory usage 
     char cm[100]; //command used to kill the process
