@@ -1,13 +1,13 @@
 # Identificação
 
-* Página do repositório do trabalho ([link GitHub](TODO)) 
+* Página do repositório do trabalho ([link GitHub](https://github.com/Leandro97/teaching)) 
 
 * Discente 1
-	* Nome: TODO
-	* Matrícula: TODO 
+	* Nome: Leandro Martins de Freitas
+	* Matrícula: 15111982 
 * Discente 2
-	* Nome: TODO
-	* Matrícula: TODO
+	* Nome: Douglas Henrique Maximo da Silva
+	* Matrícula: 15111881
 
 # Discussão 
 
