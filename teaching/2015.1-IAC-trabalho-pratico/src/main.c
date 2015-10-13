@@ -7,7 +7,7 @@
 
 int main (int argc, char *argv[], char *envp[]) {
 
-	int pid ; //process identifier
+    int pid ; //process identifier
     int i;
     char cpu[100]; //command of cpu usage 
     char mem[100]; //command of memory usage 
