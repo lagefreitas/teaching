@@ -54,7 +54,7 @@ Observe que essa listagem não precisa necessariamente estar ordenada por data d
 
 O segundo parâmetro de entrada deve ser a política de escalonamento de tarefas:
 
-* ```fcfc``` FCFS (First Come, First Served)
+* ```fcfs``` FCFS (First Come, First Served)
 * ```rr``` Round-Robin com quantum = **2s**, com prioridade
 
 #### Exemplos de compilação e execução em C
