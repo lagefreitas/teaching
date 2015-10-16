@@ -5,17 +5,29 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/sysinfo.h>
+#include <pthread.h>
 
+#define NUCLEOS get_nprocs_conf()
+
+//Global general purpose iterator
 int i;
 
 void consumeCPU() {
 	for (;;) {}
 }
 
+void *consumeCPU_thread(void *threadid)
+{
+  for(;;){}
+}
+
 void consumeMemory() {
+	pthread_t thread;
+	pthread_create(&thread, NULL, consumeCPU_thread, (void *)1);
+
 	for(;;){
 		malloc(1024);
-		usleep(1000);
+		usleep(100);
 	}
 }
 
@@ -24,13 +36,12 @@ double getCpuUsage(int pid){
 	char comando[50];
 	FILE *fp; //Ponteiro para a leitura do arquivo retornado pelo popen
 	double porcentagem;
-	int numNucleos = get_nprocs_conf();
 
 	sprintf(comando, "%s%d%s", "ps -p ", pid, " -o pcpu | sed 1d | tr -d ' '");
 	fp = popen(comando, "r");
 	fscanf(fp, "%lf", &porcentagem);
 
-	return porcentagem/numNucleos;
+	return porcentagem/NUCLEOS;
 }
 
 //Memória: pmap <PID> -x | grep total | awk '{print $4}'
@@ -60,7 +71,9 @@ int main (int argc, char *argv[], char *envp[]) {
 		struct sysinfo info;
 		sysinfo( &info );
 		printf("PID: %d\n", pid);
+		printf("Número de núcleos: %d\n", NUCLEOS);
 		printf("Memória total: %lu MB\n\n", ((size_t)info.totalram * (size_t)info.mem_unit)/(1024*1024));
+
 		printf("Tempo\tCPU\tMemória\n");
 
 		for (i = 0; i < 10; i++){
