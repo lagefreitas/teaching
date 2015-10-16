@@ -26,7 +26,7 @@ int main (int argc, char *argv[], char *envp[]) {
 	{
         //these sprintf function format the used command
         sprintf(aux1, "%s%d%s", "ps -e -o pid,pcpu | grep ", pid, " | awk '{print $2}'");
-        sprintf(aux2, "%s%d%s", "cat /proc/", pid,"/status | grep VmSize | awk '{print $2}'");
+        sprintf(aux2, "%s%d%s", "cat /proc/", pid,"/status | grep VmRSS | awk '{print $2}'");
         sprintf(cm, "%s%d", "kill -9 ", pid);
         
         nucleos = get_nprocs_conf();
