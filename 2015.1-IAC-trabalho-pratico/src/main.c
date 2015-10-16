@@ -70,6 +70,10 @@ int main (int argc, char *argv[], char *envp[]) {
 	else if ( pid > 0 ) {
 		struct sysinfo info;
 		sysinfo( &info );
+
+		FILE *fp;
+		fp = fopen("log.txt", "w");
+
 		printf("PID: %d\n", pid);
 		printf("Número de núcleos: %d\n", NUCLEOS);
 		printf("Memória total: %lu MB\n\n", ((size_t)info.totalram * (size_t)info.mem_unit)/(1024*1024));
@@ -78,6 +82,7 @@ int main (int argc, char *argv[], char *envp[]) {
 
 		for (i = 0; i < 10; i++){
 			printf("%ds\t%.2lf%%\t%d kB\n", i, getCpuUsage(pid), getMemoryUsage(pid));
+			fprintf(fp, "%ds\t%.2lf%%\t%d kB\n", i, getCpuUsage(pid), getMemoryUsage(pid));
 			sleep(1);
 		}
 		kill(pid, SIGKILL); //Mata o processo filho
