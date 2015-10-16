@@ -19,5 +19,5 @@ A seguir, serão descritos os passos necessários para realizar a utilização d
 * Tendo realizados os passo anteriores, agora deve-se executar o comando ```./a.out cpu```.
 	* Esse comando irá executar o binário resultante da compilação realizada anteriormente. Nesta execução, o algoritmo irá apenas fazer a análise do uso da cpu.
 	
-* Após finalizada a execução anterior, com o parâmetro ```cpu```, agora pode-se realizar a execução completa, com o seguinte comando: ```./a.out cpu-mem```.
+* Para realizar a execução completa, o seguinte comando deverá ser executado: ```./a.out cpu-mem```.
 	* Esse comando irá executar o binário resultante da compilação realizada anteriormente. Nesta execução, o algoritmo irá fazer a análise do uso da cpu e alocar memória, também analisando o seu uso.
