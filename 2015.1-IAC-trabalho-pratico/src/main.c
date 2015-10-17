@@ -71,8 +71,9 @@ int main (int argc, char *argv[], char *envp[]) {
 		struct sysinfo info;
 		sysinfo( &info );
 
-		FILE *fp;
-		fp = fopen("log.txt", "w");
+		FILE *logFile, *plotFile;
+		logFile = fopen("log.txt", "w");
+		plotFile = fopen("plot.txt", "w");
 
 		printf("PID: %d\n", pid);
 		printf("Número de núcleos: %d\n", NUCLEOS);
@@ -81,10 +82,15 @@ int main (int argc, char *argv[], char *envp[]) {
 		printf("Tempo\tCPU\tMemória\n");
 
 		for (i = 0; i < 10; i++){
-			printf("%ds\t%.2lf%%\t%d kB\n", i, getCpuUsage(pid), getMemoryUsage(pid));
-			fprintf(fp, "%ds\t%.2lf%%\t%d kB\n", i, getCpuUsage(pid), getMemoryUsage(pid));
+			double cpuUsage = getCpuUsage(pid);
+			int memoryUsage = getMemoryUsage(pid);
+			printf("%ds\t%.2lf%%\t%d kB\n", i, cpuUsage, memoryUsage);
+			fprintf(logFile, "%ds\t%.2lf%%\t%d kB\n", i, cpuUsage, memoryUsage);
+			fprintf(plotFile, "%d %.2lf %d \n", i, cpuUsage, memoryUsage);
 			sleep(1);
 		}
+		fclose(logFile);
+		fclose(plotFile);
 		kill(pid, SIGKILL); //Mata o processo filho
 	}
 	else {
