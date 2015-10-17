@@ -20,7 +20,7 @@
 
 
 ## Utilização intensa da UCP
-![CPU](/src/plot CPU.png)
+![CPU](src/plot CPU.png)
 
 ## Utilização intensa da UCP e memória
-![CPU-MEMÓRIA](/src/plot CPU-MEM.png)
+![CPU-MEMÓRIA](src/plot CPU-MEM.png)
