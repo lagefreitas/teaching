@@ -104,6 +104,10 @@ int main (int argc, char *argv[], char *envp[]) {
 		exit(22);
 	}
 
+	if (strcmp(argv[2], "plot") == 0 ) {
+		system("julia plot.jl");
+	}
+
 	exit(0); /* encerra o processo com sucesso (código 0) */
 
 }
