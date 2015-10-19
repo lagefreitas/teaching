@@ -11,18 +11,10 @@
 
 # Discussão 
 
-* TODO: Em cada seção:
-	* explicar e discutir sobre o comportamento do programa para cada experimento;
-	* sempre referenciar o código fonte e o gráfico do experimento realizado;
-	* colocar um gráfico do consumo da UCPe da memória pelo processo filho em função do tempo sendo duas curvas;
-		* cada curva representa uma métrica medida (consumo de UCPem porcentagem e consumo de memória em Kilobytes);
-		* o eixo das abscissas deve representar o tempo medido a cada segundo e o eixo das coordenadas deve ser a métrica medida.
-
-
 ##Utilização intensa da UCP
 
-
 ![Gráfico do Experimento I](I.png)
+Gráfico do Experimento I
 
 No experimento em questão, foi notado que na marca de 1 segundo, a utilização de CPU é de 0.0%, isso se dá pelo fato de que, quando o algoritmo é executado pelo usuário o seu processo é mandado, inicialmente, para a fila de espera para apenas em seguida ir para a execução no processador. 
 
@@ -33,6 +25,7 @@ Nota-se também que a quantidade de memória mantem-se constante, pois apenas a 
 ## Utilização intensa da UCPe memória
 	
 ![Gráfico do Experimento II](II.png)
+Gráfico do Experimento II
 
 No experimento II, quanto ao uso de Unidade central de processamento, é idêntico ao Experimento I, tendo no tempo 1, 0.0% de uso e a partir do tempo 2 até o tempo 10, mantem-se em média com 25.3% de uso. Já em relação ao uso de memória, nota-se que, diferentemente do Experimento I, o experimento II, aloca memória em cada tempo, tendo um grande crescimento a partir do tempo 1 até o tempo 8, e do tempo 8 ao 10, o crescimento no uso de memória diminui e tende a se estabilizar, vide figura Gráfico do Experimento II. 
 
@@ -43,6 +36,11 @@ Quando executado em máquinas diferentes da utilizada para elaboração do relat
 ![Experimentos](Teste.jpg)
 Os programas foram executados “ao mesmo tempo”.
 
-Visto que a comunicação entre o processador e o disco rígido é muito mais lenta que a troca de mensagens entre CPU e memória principal, ao utilizar o swap
+Visto que a comunicação entre o processador e o disco rígido é muito mais lenta que a troca de mensagens entre CPU e memória principal, ao utilizar o swap o processo leva mais tempo para alocar a memória necessária quando o limite de memória é atingido, por isso há travamento no sistema. 
 
+# Funcionalidades adicionais
+
+*Comentários em inglês feitos por Leandro Martins de Freitas.
+
+*Gravação da saída em arquivos feita por Douglas Henrique Maximo da Silva
 
