@@ -14,7 +14,7 @@ int main (int argc, char *argv[], char *envp[]) {
     char cpu[100]; //command of cpu usage 
     char mem[100]; //command of memory usage 
     char cm[100]; //command used to kill the process
-    char aux1[100], aux2[100];
+    char aux1[100], aux2[100]; 
     
 	pid = fork() ; //process replication
 
@@ -25,8 +25,17 @@ int main (int argc, char *argv[], char *envp[]) {
 	else if(pid > 0) //if I'm the father process 
 	{
         //these sprintf function format the used command
+        
+        //the "ps" command lists the running process. The parameters "pid" and "pcpu" returns the CPU consumption through process with this PID
+        //grep is used to filter result of system log files(in this case, I just want the data relative to this PID)
+        //awk formats outputs(in this case, I just want to print the second column of output)
         sprintf(aux1, "%s%d%s", "ps -e -o pid,pcpu | grep ", pid, " | awk '{print $2}'");
+        
+        //the /proc on Linux is a virtual directory that provides, among others, information about processes. 
+        //"VmRSS" indicates the amount of memory currently in use by process 
         sprintf(aux2, "%s%d%s", "cat /proc/", pid,"/status | grep VmRSS | awk '{print $2}'");
+        
+        //this command "kills" the process 
         sprintf(cm, "%s%d", "kill -9 ", pid);
         
         nucleos = get_nprocs_conf();
