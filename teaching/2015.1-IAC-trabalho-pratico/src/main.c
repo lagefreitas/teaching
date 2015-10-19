@@ -11,6 +11,7 @@ int main (int argc, char *argv[], char *envp[]) {
     int i;	//counter
     int nucleos; //number of CPU's cores
     FILE *file; //auxiliar file
+    FILE *log;
     char cpu[100]; //command of cpu usage 
     char mem[100]; //command of memory usage 
     char cm[100]; //command used to kill the process
@@ -40,20 +41,24 @@ int main (int argc, char *argv[], char *envp[]) {
         
         nucleos = get_nprocs_conf();
 
+	log = fopen("log.out", "w");
+
         for(i = 0; i < 10; i++) {
 	    printf("t%d - ", i + 1);	
             //file receives the result of the command and the string cpu stores the result
             file = popen(aux1, "r");
             fgets(cpu, 100, file);
             printf("CPU: %.1f%c. ", atof(cpu)/nucleos , 37);
+	    fprintf(log, "CPU: %.1f%c. ", atof(cpu)/nucleos , 37);	
             
             //file receives the result of the command and the string mem stores the result
             file = popen(aux2, "r");
             fgets(mem, 100, file);
             printf("Memória: %d kB\n", atoi(mem));
-            
+            fprintf(log, "Memória: %d kB\n", atoi(mem));
             sleep(1); //waits one second
         }
+	fprintf(log, "\n");
         fclose(file);
         system(cm); //running the killing command
 	}
