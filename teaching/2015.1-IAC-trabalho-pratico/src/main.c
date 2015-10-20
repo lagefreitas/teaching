@@ -11,7 +11,7 @@ int main (int argc, char *argv[], char *envp[]) {
     int i;	//counter
     int nucleos; //number of CPU's cores
     FILE *file; //auxiliar file
-    FILE *log;
+    FILE *log; //file that stores the results
     char cpu[100]; //command of cpu usage 
     char mem[100]; //command of memory usage 
     char cm[100]; //command used to kill the process
@@ -58,8 +58,11 @@ int main (int argc, char *argv[], char *envp[]) {
             fprintf(log, "Memória: %d kB\n", atoi(mem));
             sleep(1); //waits one second
         }
+        
 	fprintf(log, "\n");
         fclose(file);
+        fclose(log);
+        
         system(cm); //running the killing command
 	}
 	else //else I'm the son process
