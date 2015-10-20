@@ -14,8 +14,9 @@
 * TODO: Em cada seção:
 	* explicar e discutir sobre o comportamento do programa para cada experimento;
 	* sempre referenciar o código fonte e o gráfico do experimento realizado;
-	* colocar um gráfico do consumo da UCP e da memória pelo processo filho em função do tempo sendo duas curvas;
-		* cada curva representa uma métrica medida (consumo de CUP em porcentagem e consumo de memória em Kilobytes);
+	* fazer dois gráficos do consumo recursos do processo filho em função do tempo:
+		* um gráfico para o consumo de memória em Kilobytes;
+		* um gráfico para o consumo da CPU em porcentagem.
 		* o eixo das abscissas deve representar o tempo medido a cada segundo e o eixo das coordenadas deve ser a métrica medida.
 
 
