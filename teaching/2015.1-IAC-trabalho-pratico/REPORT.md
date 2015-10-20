@@ -34,7 +34,7 @@ A explicação para tal fato é que o alocamento de memória está se aproximand
 Quando executado em máquinas diferentes da utilizada para elaboração do relatório, o algoritmo executado para análise de CPU e memória, causou travamento ao se aproximar da capacidade total de memória das máquinas. Há, porém, uma particularidade: na máquina usada para a realização dos experimentos, não há área de swap. Fizemos uso de 2 máquinas virtuais com Ubuntu 14.04 versão 64 bits - uma com área de swap e outra sem - para simular os experimentos de alocação de memória. Ao atingir o limite máximo de alocação de memória o computador sem swap não apresenta travamentos e a quantidade de memória usada mantém-se constante depois de um certo tempo.
 
 ![Experimentos](Teste.jpg)
-Os programas foram executados “ao mesmo tempo”. À esquerda, máquina sem swap e a direita com swap. 
+Os programas foram executados “ao mesmo tempo”. À esquerda, máquina sem swap e à direita com swap. 
 
 Visto que a comunicação entre o processador e o disco rígido é muito mais lenta que a troca de mensagens entre CPU e memória principal, ao utilizar o swap o processo leva mais tempo para alocar a memória necessária quando o limite de memória é atingido, por isso há travamento no sistema. 
 
