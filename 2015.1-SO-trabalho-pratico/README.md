@@ -214,9 +214,9 @@ A responsabilidade sobre a integridade do arquivo contendo trabalho é exclusiva
 ### Prazos
 
 
-O prazo de entrega sem atraso é o dia **20/10/15**.
+O prazo de entrega sem atraso é o dia **23/10/15**.
 
-Trabalhos entregues com atraso serão aceitos, no máximo, até o o dia **22/10/15**. Serão descontados 5% da nota obtida por dia de atraso.
+Trabalhos entregues com atraso serão aceitos, no máximo, até o o dia **25/10/15**. Serão descontados 5% da nota obtida por dia de atraso.
 
 
 ## Referências
