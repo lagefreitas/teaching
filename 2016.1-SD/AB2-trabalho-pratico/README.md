@@ -2,7 +2,7 @@
 
 ### JuliaBox
 
- Baixar o arquivo `README.ipynb` e carregar no [JuliaBox](https://juliabox.org):
+ Baixar o arquivo `README.ipynb` e carregar no [JuliaBox](https://juliabox.com):
 
 1. Sign in
 2. Upload
