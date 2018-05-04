@@ -1,13 +1,13 @@
-<p align="center">
-Universidade Federal de Alagoas</br>
-Instituto de Computação</br>
-</p>
 
-#Trabalho Prático AB2
+Universidade Federal de Alagoas
+Instituto de Computação
 
-Disciplina: Introdução à Computação</br>
-Semestre letivo: 2017.2</br>
-Professor: André Lage Freitas</br>
+Disciplina: Introdução à Computação
+Semestre letivo: 2017.2
+Professor: André Lage Freitas
+
+
+# Trabalho Prático AB2 (TP AB2.1)
 
 ## Objetivo
 
@@ -90,17 +90,17 @@ Em suma, entendam que quem corrigirá o seu trabalho utilizará outro ambiente c
 
 ## Critérios de Correção
 
-* A nota máxima atribuída será de 20,0 pontos distribuídos da seguinte maneira:
-	* Conteúdo (8,0 pontos): se o programa funciona de acordo com a sua especificação distribuídos da seguinte forma:
-		* 4,0 pontos: código com utilização intensa da CPU;
-		* 4,0 pontos: código com utilização intensa da CPU e da memória.
-	* Relatório (8,0 pontos) distribuídos da seguinte forma: 
-		* 4,0 pontos: seção Resultados;
-		* 4,0 pontos: seção Discussão.
-	* Organização (2,0 pontos): código e relatório bem escritos, padronizados e código-fonte comentado.
+* A nota máxima atribuída será de 30,0 pontos distribuídos da seguinte maneira:
+	* Conteúdo (12,0 pontos): se o programa funciona de acordo com a sua especificação distribuídos da seguinte forma:
+		* 6,0 pontos: código com utilização intensa da CPU;
+		* 6,0 pontos: código com utilização intensa da CPU e da memória.
+	* Relatório (12,0 pontos) distribuídos da seguinte forma: 
+		* 6,0 pontos: seção Resultados;
+		* 6,0 pontos: seção Discussão.
+	* Organização (6,0 pontos): relatório claros, objetivos e sem erros ortográficos; código-fonte comentado e padronizado.
 * Cada equipe deverá distribuir os pontos entre os membros da equipe sendo a nota individual de cada membro não poderá ser maior que 10,0 pontos.
-* Após a divulgação da nota do trabalho, a equipe terá 48h para enviar as notas pelo Google Classroom.
-* Equipes devem conter **2 discentes**.
+* Após a divulgação da nota do trabalho, a equipe terá 48h para enviar a distribuição das notas pelo Google Classroom. Se não for enviado, o Professor distribuirá homogeneamente as notas entres os compenentes da equipe.
+* Equipes devem conter **3 discentes**.
 
 ### Pontuação extra
 
