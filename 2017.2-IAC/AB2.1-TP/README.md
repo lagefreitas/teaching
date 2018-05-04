@@ -101,9 +101,10 @@ Em suma, entendam que quem corrigirá o seu trabalho utilizará outro ambiente c
 		* 6,0 pontos: seção Discussão.
 	* Organização (6,0 pontos): relatório claros, objetivos e sem erros ortográficos; código-fonte comentado e padronizado.
 * Cada equipe deverá distribuir os pontos entre os membros da equipe sendo a nota individual de cada membro não poderá ser maior que 10,0 pontos.
-* Após a divulgação da nota do trabalho, a equipe terá 48h para enviar a distribuição das notas pelo Google Classroom. Se não for enviado, o Professor distribuirá homogeneamente as notas entres os compenentes da equipe.
 * Equipes devem conter **3 discentes**.
+ * Importante: preencher no arquivo `REPORT.md` o campo **Distribuição da nota (%)**, indicando a porcentagem que cada discente deve obter em relação à nota que será atribuída ao Trabalho. Caso esses campos não sejam preenchidos, o Professor distribuirá homogeneamente as notas entres os compenentes da equipe.
 
+ 
 ### Pontuação extra
 
 Os(as) discentes que realizarem mais tarefas, além do que foi especificado neste trabalho, o professor atribuirá de 0,5 a 1,0 ponto extra a depender da relevância da contribuição no programa. O critério será decidido pelo professor. Por exemplo, adição de funcionalidades, armazenamento de dados em arquivo, documentação de código, comentários em inglês sem erros ortográficos, etc.
