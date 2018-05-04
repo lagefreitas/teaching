@@ -5,10 +5,16 @@
 * Discente 1
 	* Nome: TODO
 	* Matrícula: TODO 
+	* Distribuição da nota (%): TODO
 * Discente 2
 	* Nome: TODO
 	* Matrícula: TODO
-
+	* Distribuição da nota (%): TODO
+* Discente 3
+	* Nome: TODO
+	* Matrícula: TODO
+	* Distribuição da nota (%): TODO		
+	
 # Resultados
 
 * TODO: Plotar um gráfico com os resultados das medições das seguintes métricas utilizadas para avaliar o comportamento do **processo filho**:
