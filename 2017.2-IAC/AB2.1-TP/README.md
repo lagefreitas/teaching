@@ -1,11 +1,13 @@
 
 Universidade Federal de Alagoas
+
 Instituto de Computação
 
 Disciplina: Introdução à Computação
-Semestre letivo: 2017.2
-Professor: André Lage Freitas
 
+Semestre letivo: 2017.2
+
+Professor: André Lage Freitas
 
 # Trabalho Prático AB2 (TP AB2.1)
 
