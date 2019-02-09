@@ -5,7 +5,7 @@ Instituto de Computação
 
 Disciplina: Introdução à Computação
 
-Semestre letivo: 2018.1
+Semestre letivo: 2018.2
 
 Professor: André Lage Freitas
 
