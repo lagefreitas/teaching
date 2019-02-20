@@ -1,1 +1,10 @@
-#TODO Instruções para o Professor sobre como compilar e executar o programa
+## Comando de compilação:
+
+```gcc main.c -o bin```
+
+
+## Instruções de execução:
+
+```./bin parâmetro ```
+
+Tendo como parâmetros, ucp e ucp-mem. 
